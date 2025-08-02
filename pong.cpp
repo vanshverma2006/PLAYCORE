@@ -14,7 +14,7 @@ class Ball{
     Ball(float posX,float posY,int speedX,int speedY,float radius){
         this->posX=posX;
         this->posY=posY;
-        this->speedX=speedX;
+        this->speedX=speedX; 
         this->speedY=speedY;
         this->radius=radius;
     }
@@ -22,27 +22,30 @@ class Ball{
         DrawCircleGradient(posX, posY, radius, RED, RED);
     }
     void speed(){
-        posX+=speedX;
-        posY+=speedY;
+        posX += speedX;
+        posY += speedY;
 
-        if (posY+radius>=screenHeight||posY+radius<=0){
-            speedY*=-1;
-        }
-        if (posX+radius>=screenWidth||posX+radius<=0){
-            speedX*=-1;
-        }
         // Scoring logic
         if(posX - radius < 0){
             aiScore++;
             posX = screenWidth / 2;
             posY = screenHeight / 2;
-            speedX = -speedX;
+            speedX = 5;
+            speedY = 5;
+            return;
         }
         if(posX + radius > screenWidth){
             playerScore++;
             posX = screenWidth / 2;
             posY = screenHeight / 2;
-            speedX = -speedX;
+            speedX = -5;
+            speedY = 5;
+            return;
+        }
+
+        // Wall collision (top and bottom only)
+        if (posY + radius >= screenHeight || posY - radius <= 0){
+            speedY *= -1;
         }
     }
 };
@@ -91,9 +94,9 @@ class Ai : public pedal{
         this-> height=height;
     }
     void trackBall(float ballY) {
-        if (ballY < posY) posY -= 7;
-        else if (ballY > posY + height) posY += 7;
-    }
+    if (ballY < posY && posY > 0) posY -= 4;
+    else if (ballY > posY + height && posY + height < screenHeight) posY += 4;
+}
     
 };
 int main() {
@@ -101,7 +104,7 @@ int main() {
     
     
     
-    Ball ball(screenWidth/2,screenHeight/2,7,7,7);
+    Ball ball(screenWidth/2,screenHeight/2,5,5,10);
     pedal sq1(1,300,10,75);
     Ai sq2(790,300,10,75);
 
