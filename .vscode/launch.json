@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/vanshverma/cppLibrary",
+      "program": "/Users/vanshverma/cppLibrary/build/Debug/outDebug",
+      "env": {
+        "PATH": "/opt/homebrew/bin:${env:PATH}"
+      },
+      "preLaunchTask": "build",
+      "sourceMap": {
+        "/opt/homebrew/include/raylib": "${workspaceFolder}/raylib"
+      }
+    }
+  ]
+}
