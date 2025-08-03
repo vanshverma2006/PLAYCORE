@@ -4,6 +4,7 @@
     const float screenHeight = 600;
     int playerScore=0;
     int aiScore=0;
+
 class Ball{
     public:
     float posX;
@@ -100,7 +101,7 @@ class Ai : public pedal{
     
 };
 int main() {
-    // Initialization
+
     
     
     
@@ -110,11 +111,10 @@ int main() {
 
     InitWindow(screenWidth, screenHeight, "Basic Raylib Window");
 
-    SetTargetFPS(60); // Set desired frame rate
+    SetTargetFPS(60); 
 
-    // Main game loop
-    while (!WindowShouldClose()) {
-        // Start drawing
+    while (WindowShouldClose()==false) {
+
         BeginDrawing();
         ClearBackground(RAYWHITE);
         DrawRectangleGradientV(0, 0, screenWidth, screenHeight, SKYBLUE, DARKBLUE);

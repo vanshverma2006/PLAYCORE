@@ -9,7 +9,7 @@ int main() {
     SetTargetFPS(60); // Set desired frame rate
 
     // Main game loop
-    while (!WindowShouldClose()) {
+    while (WindowShouldClose()==false) {
         // Start drawing
         BeginDrawing();
         ClearBackground(RAYWHITE);
