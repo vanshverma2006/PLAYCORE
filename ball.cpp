@@ -24,9 +24,38 @@ class Ball{
         velocityY += gravity;
         // posY += static_cast<int>(velocityY);
         posY += velocityY;
+
     }
+
+};
+
+class Wall{
+    public:
+    int posx,posy,speedx;
+    int height,width;
+Wall(){}
+Wall(int posx,int posy,int width,int height,int speedx){
+    this->posx=posx;
+    this->posy=posy;
+    this->width=width;
+    this->height=height;
+    this->speedx=speedx;
+}
+void draw(){
+    DrawRectangle(posx,posy,width,height,BLACK);
+}
+void update() {
+    posx -= speedx; // move wall left
+    // If you want to reset it when it leaves screen, you can do:
+    if (posx + width < 0) {
+        posx = screenWidth; // reset to right edge
+    }
+
+    }
+
 };
     Ball ball(screenWidth/2,screenHeight/2,10);
+    Wall wall(screenWidth,screenHeight-100,20,100,5);
 int main() {
 
     InitWindow(screenWidth, screenHeight, "Basic Raylib Window");
@@ -40,6 +69,8 @@ int main() {
         ClearBackground(RAYWHITE);
         ball.draw();
         ball.update();
+        wall.draw();
+        wall.update();
 
     
 
