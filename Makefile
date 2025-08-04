@@ -10,8 +10,8 @@ CXXFLAGS = -std=c++17 -I/opt/homebrew/include -I/opt/homebrew/include/raylib
 LDFLAGS = -L/opt/homebrew/lib -lraylib -framework OpenGL -framework Cocoa -framework IOKit
 
 # Source and output
-SRC =ball.cpp
-OUT = ball
+SRC =prac.cpp
+OUT = prac
 
 all:
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(OUT) $(LDFLAGS)
