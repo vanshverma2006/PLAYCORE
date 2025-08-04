@@ -31,7 +31,7 @@ class Ball{
         if (howToPlay=='l'){
 
         if(posX - radius < 0){
-            aiScore++;
+            playerScore2++;
             posX = screenWidth / 2;
             posY = screenHeight / 2;
             speedX = 5;
@@ -41,7 +41,7 @@ class Ball{
         }
         if (howToPlay=='o'){
         if(posX - radius < 0){
-            playerScore2++;
+            aiScore++;
             posX = screenWidth / 2;
             posY = screenHeight / 2;
             speedX = 5;
@@ -70,7 +70,6 @@ class pedal{
     int posX;
     int posY;
     int width,height;
-    char key;
     pedal(){}
     pedal(int posX,int posY,int width,int height){
         this-> posX=posX;
@@ -92,6 +91,8 @@ class pedal{
         if (IsKeyDown(KEY_UP)) posY -= 5;
         if (IsKeyDown(KEY_DOWN)) posY += 5;
         }
+        if (posY < 0) posY = 0;
+        if (posY + height > screenHeight) posY = screenHeight - height;
     }
     
 };
@@ -134,8 +135,14 @@ int main() {
         BeginDrawing();
         ClearBackground(RAYWHITE);
         DrawRectangleGradientV(0, 0, screenWidth, screenHeight, SKYBLUE, DARKBLUE);
+
+        if (howToPlay != 'l' && howToPlay != 'o') {
+            DrawText("Press 1 to to play with Friend", 250, 250, 30, BLACK);
+            DrawText("Press 2 to play vs AI", 250, 300, 30, BLACK);
+        }
+
         if (IsKeyPressed(KEY_ONE)) howToPlay = 'l';
-if (IsKeyPressed(KEY_TWO)) howToPlay = 'o';
+        if (IsKeyPressed(KEY_TWO)) howToPlay = 'o';
 // to play with friend
         if (howToPlay=='l'){
         sq1.draw();
