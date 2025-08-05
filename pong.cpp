@@ -1,5 +1,5 @@
-#include "raylib.h"
 #include<iostream>
+#include<raylib.h>
     const float screenWidth = 800;
     const float screenHeight = 600;
     int playerScore=0;
