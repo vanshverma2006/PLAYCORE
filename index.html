@@ -8,43 +8,54 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background-color: #121212;
-  color: #f1f1f1;
-  text-align: center;
-}
-
-.emscripten {
-  margin: 0 auto;
-  display: block;
-}
-
-canvas.emscripten {
-  border: none;
-  background-color: #1e1e1e;
+  background-color: #e0f9f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 #emscripten_logo {
-  margin: 20px auto;
-  width: 200px;
-  display: block;
+  width: 80px;
+  margin: 20px 10px;
+  border-radius: 12px;
+}
+
+.emscripten {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #fbeec1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+canvas.emscripten {
+  border: 5px solid #f5ca99;
+  border-radius: 12px;
+  background-color: #fff2df;
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 #status {
   font-weight: bold;
-  margin: 10px auto;
-  color: #aaa;
+  color: #555;
+  margin: 10px;
 }
 
 .spinner {
   height: 30px;
   width: 30px;
-  margin-top: 20px;
-  display: inline-block;
-  vertical-align: top;
   border: 4px solid #ccc;
   border-top: 4px solid #00e676;
   border-radius: 50%;
   animation: rotation 1s linear infinite;
+  margin: 10px;
 }
 
 @keyframes rotation {
@@ -52,20 +63,53 @@ canvas.emscripten {
   to { transform: rotate(360deg); }
 }
 
-#controls {
-  margin: 20px auto;
-  text-align: center;
-  font-size: 14px;
+.emscripten_border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#controls input[type="checkbox"],
-#controls input[type="button"] {
-  margin: 0 10px;
+.sidebar-left,
+.sidebar-right {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.sidebar-left {
+  left: 0;
+}
+
+.sidebar-right {
+  right: 0;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-left img,
+.sidebar-right img {
+  width: 60px;
+  height: 60px;
+  margin: 10px 0;
+  border-radius: 12px;
+  object-fit: cover;
   cursor: pointer;
 }
-</style>
+    </style>
   </head>
   <body>
+    <div class="sidebar-left">
+      <img src="game1-thumb.jpg" alt="Game 1">
+      <img src="game2-thumb.jpg" alt="Game 2">
+      <img src="game3-thumb.jpg" alt="Game 3">
+    </div>
     <a href="http://emscripten.org"> <img id="emscripten_logo" src="your-logo.png" alt="Game Logo"></a>
 
     <div class="spinner" id='spinner'></div>
@@ -73,10 +117,12 @@ canvas.emscripten {
 
     <span id='controls'>
       <span><input type="checkbox" id="resize">Resize canvas</span>
+      <!--
       <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
       <span><input type="button" value="Fullscreen" onclick="Module.requestFullscreen(document.getElementById('pointerLock').checked, 
                                                                                 document.getElementById('resize').checked)">
       </span>
+      -->
     </span>
 
     <div class="emscripten">
@@ -85,6 +131,11 @@ canvas.emscripten {
 
     <div class="emscripten_border">
       <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+    </div>
+    <div class="sidebar-right">
+      <img src="game4-thumb.jpg" alt="Game 4">
+      <img src="game5-thumb.jpg" alt="Game 5">
+      <img src="game6-thumb.jpg" alt="Game 6">
     </div>
 
     <script type='text/javascript'>
