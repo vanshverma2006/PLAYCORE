@@ -1,0 +1,9 @@
+source ~/emsdk/emsdk_env.sh
+
+emcc -v your_game.cpp -o index.html \
+  -I/Users/vanshverma/emsdk/raylib/src \
+  /Users/vanshverma/emsdk/raylib/build_web/raylib/libraylib.a \
+  -s USE_GLFW=3 \
+  -s ASYNCIFY \
+  -s ALLOW_MEMORY_GROWTH=1 \
+  -DPLATFORM_WEB

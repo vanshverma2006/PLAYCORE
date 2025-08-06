@@ -34,11 +34,11 @@ class Wall{
     int posx,posy,speedx;
     int height,width;
 Wall(){}
-Wall(int posx,int posy,int width,int height,int speedx){
-    this->posx=posx;
+Wall(int posy,int width,int speedx){
+    this->posx=GetRandomValue(screenWidth/2,700);
     this->posy=posy;
     this->width=width;
-    this->height=height;
+    this->height=GetRandomValue(300,600);
     this->speedx=speedx;
 }
 void draw(){
@@ -55,7 +55,7 @@ void update() {
 
 };
     Ball ball(screenWidth/2,screenHeight/2,10);
-    Wall wall(screenWidth,screenHeight-100,20,100,5);
+    Wall wall(screenHeight-100,20,5);
 int main() {
 
     InitWindow(screenWidth, screenHeight, "Basic Raylib Window");
