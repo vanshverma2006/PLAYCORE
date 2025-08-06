@@ -1,5 +1,5 @@
+#include "raylib.h"
 #include<iostream>
-#include<raylib.h>
     const float screenWidth = 800;
     const float screenHeight = 600;
     int playerScore=0;
@@ -33,7 +33,8 @@ class Ball{
         if(posX - radius < 0){
             playerScore2++;
             posX = screenWidth / 2;
-            posY = screenHeight / 2;
+            // posY = screenHeight / 2;
+            posY=GetRandomValue(0,600);
             speedX = 5;
             speedY = 5;
             return;
@@ -43,7 +44,9 @@ class Ball{
         if(posX - radius < 0){
             aiScore++;
             posX = screenWidth / 2;
-            posY = screenHeight / 2;
+            // posY = screenHeight / 2;
+            posY=GetRandomValue(0,600);
+        
             speedX = 5;
             speedY = 5;
             return;
@@ -52,7 +55,8 @@ class Ball{
         if(posX + radius > screenWidth){
             playerScore++;
             posX = screenWidth / 2;
-            posY = screenHeight / 2;
+            // posY = screenHeight / 2;
+            posY=GetRandomValue(0,600);
             speedX = -5;
             speedY = 5;
             return;
@@ -107,8 +111,8 @@ class Ai : public pedal{
         this-> height=height;
     }
     void trackBall(float ballY) {
-    if (ballY < posY && posY > 0) posY -= 4;
-    else if (ballY > posY + height && posY + height < screenHeight) posY += 4;
+    if (ballY < posY && posY > 0) posY -= 10;
+    else if (ballY > posY + height && posY + height < screenHeight) posY += 10;
 }
     
 };
