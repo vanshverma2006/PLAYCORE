@@ -19,7 +19,7 @@ class Ball{
         DrawCircle(posX,posY,radius,BLACK);
     }
     void update(){
-        if (posY + radius >= screenHeight) posY = screenHeight - radius;
+        if (posY + radius >= screenHeight) posY = screenHeight - radius-10;
         if (IsKeyPressed(KEY_SPACE)) velocityY = -10.0f;
         velocityY += gravity;
         // posY += static_cast<int>(velocityY);
@@ -42,6 +42,8 @@ Wall(int posy,int width,int speedx){
     this->speedx=speedx;
 }
 void draw(){
+    // this->posx=GetRandomValue(screenWidth/2,700);
+    this->height=GetRandomValue(300,600);
     DrawRectangle(posx,posy,width,height,BLACK);
 }
 void update() {
