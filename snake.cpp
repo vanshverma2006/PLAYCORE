@@ -69,20 +69,23 @@ public:
             float drawHeight = height * 1.5f;
             float offsetX = (drawWidth - width) / 2;
             float offsetY = (drawHeight - height) / 2;
+            int rectX = body[i].x - offsetX;
+            int rectY = body[i].y - offsetY;
+            int rectW = drawWidth;
+            int rectH = drawHeight;
             if (i == 0) {
-
-                DrawRectangleRounded({body[i].x - offsetX, body[i].y - offsetY, drawWidth, drawHeight}, 0.5f, 16, (Color){100, 255, 100, 255});
-                DrawRectangleRoundedLines({body[i].x - offsetX, body[i].y - offsetY, drawWidth, drawHeight}, 0.5f, 16, DARKGREEN);
-
+                // Head: filled DARKGREEN, outlined BLACK
+                DrawRectangle(rectX, rectY, rectW, rectH, DARKGREEN);
+                DrawRectangleLines(rectX, rectY, rectW, rectH, BLACK);
                 float eyeRadius = drawWidth * 0.12f;
                 float eyeX = body[i].x - offsetX + drawWidth * 0.75f;
                 float eyeY = body[i].y - offsetY + drawHeight * 0.35f;
                 DrawCircle(eyeX, eyeY, eyeRadius, BLACK);
                 DrawCircle(eyeX, eyeY, eyeRadius * 0.5f, WHITE);
             } else {
-
-                DrawRectangleRounded({body[i].x - offsetX, body[i].y - offsetY, drawWidth, drawHeight}, 0.5f, 16, (Color){100, 255, 100, 255});
-                DrawRectangleRoundedLines({body[i].x - offsetX, body[i].y - offsetY, drawWidth, drawHeight}, 0.5f, 16, DARKGREEN);
+                // Body: filled GREEN, outlined BLACK
+                DrawRectangle(rectX, rectY, rectW, rectH, GREEN);
+                DrawRectangleLines(rectX, rectY, rectW, rectH, BLACK);
             }
         }
     }
