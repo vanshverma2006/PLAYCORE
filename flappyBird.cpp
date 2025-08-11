@@ -32,8 +32,8 @@ public:
         velocityY += gravity;
         posY += static_cast<int>(velocityY);
 
-        if (posY - radius < 0) posY = radius; // Ceiling collision
-        if (posY + radius > screenHeight) posY = screenHeight - radius; // Ground collision
+        if (posY - radius < 0) posY = radius; 
+        if (posY + radius > screenHeight) posY = screenHeight - radius; 
     }
     Rectangle getBounds() {
         return Rectangle{ (float)(posX - radius), (float)(posY - radius), (float)(radius * 2), (float)(radius * 2) };

@@ -14,8 +14,8 @@ class Food{
     }
     void draw(){
 
-        DrawCircle(x + width/2, y + height/2, width/2 + 4, (Color){255, 255, 100, 80});
-        DrawCircle(x + width/2, y + height/2, width/2 + 2, (Color){255, 255, 150, 150});
+        // DrawCircle(x + width/2, y + height/2, width/2 + 4, (Color){255, 255, 100, 80});
+        // DrawCircle(x + width/2, y + height/2, width/2 + 2, (Color){255, 255, 150, 150});
         DrawCircle(x + width/2, y + height/2, width/2, YELLOW);
 
         int spikes = 8;
