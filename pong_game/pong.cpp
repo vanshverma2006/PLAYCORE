@@ -83,8 +83,8 @@ public:
             if (IsKeyDown(KEY_S)) posY += 5;
         }
         if (option == 1) {
-            if (IsKeyDown(KEY_UP)) posY -= 5;
-            if (IsKeyDown(KEY_DOWN)) posY += 5;
+            if (IsKeyDown(KEY_I)) posY -= 5;
+            if (IsKeyDown(KEY_K)) posY += 5;
         }
         if (posY < 0) posY = 0;
         if (posY + height > screenHeight) posY = screenHeight - height;
