@@ -6,7 +6,7 @@ const float screenHeight = 600;
 int playerScore = 0;
 int playerScore2 = 0;
 int aiScore = 0;
-char howToPlay;
+char howToPlay='\0';
 
 Color DARK_TEAL = {0, 128, 128, 255};
 Color LIGHT_TEAL = {0, 160, 160, 255};
@@ -37,7 +37,7 @@ public:
             if (posX - radius < 0) {
                 playerScore2++;
                 posX = screenWidth / 2;
-                posY = GetRandomValue(0, 600);
+                posY = GetRandomValue(radius, screenHeight-radius);
                 speedX = 5; speedY = 5;
                 return;
             }
@@ -46,7 +46,7 @@ public:
             if (posX - radius < 0) {
                 aiScore++;
                 posX = screenWidth / 2;
-                posY = GetRandomValue(0, 600);
+                posY = GetRandomValue(radius, screenHeight-radius);
                 speedX = 5; speedY = 5;
                 return;
             }
@@ -54,7 +54,7 @@ public:
         if (posX + radius > screenWidth) {
             playerScore++;
             posX = screenWidth / 2;
-            posY = GetRandomValue(0, 600);
+            posY = GetRandomValue(radius,screenHeight-radius);
             speedX = -5; speedY = 5;
             return;
         }
@@ -64,11 +64,11 @@ public:
     }
 };
 
-class Pedal {
+class Paddle {
 public:
     int posX, posY, width, height;
-    Pedal(){}
-    Pedal(int posX, int posY, int width, int height) {
+    Paddle(){}
+    Paddle(int posX, int posY, int width, int height) {
         this->posX = posX;
         this->posY = posY;
         this->width = width;
@@ -91,7 +91,7 @@ public:
     }
 };
 
-class Ai : public Pedal {
+class Ai : public Paddle {
 public:
     Ai(){}
     Ai(int posX, int posY, int width, int height) {
@@ -101,16 +101,16 @@ public:
         this->height = height;
     }
     void trackBall(float ballY) {
-        if (ballY < posY && posY > 0) posY -= 10;
-        else if (ballY > posY + height && posY + height < screenHeight) posY += 10;
+        if (ballY < posY && posY > 0) posY -= 5;
+        else if (ballY > posY + height && posY + height < screenHeight) posY += 5;
     }
 };
 
 int main() {
-    Ball ball(screenWidth / 2, screenHeight / 2, 5, 5, 10);
-    Pedal sq1(1, 300, 10, 75);
+    Ball ball(screenWidth / 2, screenHeight / 2, 6, 6, 10);
+    Paddle sq1(1, 300, 10, 75);
     Ai sq2(790, 300, 10, 75);
-    Pedal sq3(790, 300, 10, 75);
+    Paddle sq3(790, 300, 10, 75);
 
     InitWindow(screenWidth, screenHeight, "Pong Minimal");
     SetTargetFPS(60);
@@ -118,17 +118,44 @@ int main() {
     while (!WindowShouldClose()) {
         BeginDrawing();
 
-        // Split background
+   
         ClearBackground(DARK_TEAL);
         DrawRectangle(screenWidth/2, 0, screenWidth/2, screenHeight, LIGHT_TEAL);
 
         if (howToPlay != 'l' && howToPlay != 'o') {
-            DrawText("Press 1 to play with Friend", 250, 250, 30, WHITE);
-            DrawText("Press 2 to play vs AI", 250, 300, 30, WHITE);
-        }
+            Rectangle friendBox = {250, 250, 300, 60};
+            Rectangle aiBox = {250, 350, 300, 60};
+            
+            Vector2 mousePos = GetMousePosition();
 
-        if (IsKeyPressed(KEY_ONE)) howToPlay = 'l';
-        if (IsKeyPressed(KEY_TWO)) howToPlay = 'o';
+            Color friendColor = DARK_TEAL;
+            Color aiColor = LIGHT_TEAL;
+
+            if (CheckCollisionPointRec(mousePos, friendBox)) {
+                friendColor = {0, 180, 180, 255}; 
+            }
+            if (CheckCollisionPointRec(mousePos, aiBox)) {
+                aiColor = {0, 210, 210, 255};
+            }
+
+            DrawRectangleRec(friendBox, friendColor);
+            DrawText("Play with Friend", friendBox.x + 20, friendBox.y + 15, 30, BLACK);
+
+            DrawRectangleRec(aiBox, aiColor);
+            DrawText("Play vs AI", aiBox.x + 20, aiBox.y + 15, 30, BLACK);
+
+            DrawRectangleLinesEx(friendBox, 3, BLACK);
+            DrawRectangleLinesEx(aiBox, 3, BLACK);
+
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                if (CheckCollisionPointRec(mousePos, friendBox)) {
+                    howToPlay = 'l';
+                }
+                if (CheckCollisionPointRec(mousePos, aiBox)) {
+                    howToPlay = 'o';
+                }
+            }
+        }
 
         if (howToPlay == 'l') {
             sq1.draw();
