@@ -1,8 +1,12 @@
+const screenWidth = 800;
+const screenHeight = 600;
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const W = canvas.width;
-const H = canvas.height;
+canvas.width = screenWidth;
+canvas.height = screenHeight;
+const W = screenWidth;
+const H = screenHeight;
 
 const overlay = document.getElementById("overlay");
 const overlayMessage = document.getElementById("overlayMessage");
