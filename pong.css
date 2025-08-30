@@ -1,10 +1,8 @@
-General page setup
+/* General page setup */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-    background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +17,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-bottom: 60px;
 }
 
 /* Canvas styled like arcade */
@@ -28,25 +26,21 @@ canvas {
     border-radius: 15px;
     background: linear-gradient(180deg, #004d40, #00695c);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-    animation: glowPulse 3s infinite;
 }
 
+/* Menu overlay */
 #menu {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(20, 20, 50, 0.85);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(10, 10, 30, 0.9);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    flex-direction: column;
     z-index: 2;
     text-align: center;
-    overflow-y: auto;
 }
 
 #menu h1 {
@@ -71,63 +65,42 @@ canvas {
     font-size: 22px;
     border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.25s ease, background 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.3s ease;
     color: white;
     font-weight: bold;
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .menu-btn:hover {
-    background: linear-gradient(90deg, #00c9ff, #92fe9d);
-    transform: scale(1.15) rotate(1deg);
-    box-shadow: 0 0 25px #00c9ff, 0 0 50px #92fe9d;
+    background: #92fe9d;
+    transform: scale(1.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px #00c9ff, 0 0 40px #00c9ff; }
-  50% { box-shadow: 0 0 40px #92fe9d, 0 0 80px #92fe9d; }
-}
-
-/* More games section */
-#more-games {
-    margin-top: 40px;
-}
-
-#more-games h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #00c9ff;
-    text-shadow: 1px 1px 8px black;
-}
-
-.game-links {
+/* Bottom buttons */
+#bottom-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    z-index: 3;
 }
 
-.game-links a img {
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-    border: 3px solid white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: #222;
+.bottom-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #00695c;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.game-links a img:hover {
-    transform: scale(1.2) rotate(5deg);
-    box-shadow: 0 0 25px #00c9ff, 0 0 40px #92fe9d;
-}
-/* Utility class to hide elements but not whole menu/background */
-.hidden {
-  display: none !important;
+.bottom-btn:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
 }

@@ -34,3 +34,51 @@ body {
   .overlay p {
     font-size: 22px;
   }
+
+  .menu-btn {
+    background: #00c9ff;
+    border: none;
+    padding: 15px 40px;
+    margin: 15px;
+    font-size: 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.menu-btn:hover {
+    background: #92fe9d;
+    transform: scale(1.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* Bottom buttons */
+#bottom-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 3;
+}
+
+.bottom-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #00695c;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.bottom-btn:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
