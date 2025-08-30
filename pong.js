@@ -174,11 +174,17 @@ function checkCollision(ball, paddle) {
 // 🕹️ Menu buttons
 document.getElementById("friendBtn").addEventListener("click", () => {
     howToPlay = 'l';
-    document.getElementById("menu").style.display = "none";
+    document.querySelector("#menu h1").classList.add("hidden");
+    document.querySelector("#menu p").classList.add("hidden");
+    document.getElementById("friendBtn").classList.add("hidden");
+    document.getElementById("aiBtn").classList.add("hidden");
 });
 document.getElementById("aiBtn").addEventListener("click", () => {
     howToPlay = 'o';
-    document.getElementById("menu").style.display = "none";
+    document.querySelector("#menu h1").classList.add("hidden");
+    document.querySelector("#menu p").classList.add("hidden");
+    document.getElementById("friendBtn").classList.add("hidden");
+    document.getElementById("aiBtn").classList.add("hidden");
 });
 
 gameLoop();
