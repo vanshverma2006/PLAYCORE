@@ -4,29 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pong Arcade</title>
-  <link rel="icon" type="image/png" href="icon.png">
   <link rel="stylesheet" href="pong.css">
 </head>
 <body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+  </div>
+
   <div id="menu">
-    <img src="pong1.png" alt="Game Logo" class="game-logo">
     <h1>Pong Arcade</h1>
-    <div id="menu-options">
-      <p>Choose your mode:</p>
-      <button class="menu-btn" id="friendBtn">👬 Play with Friend</button>
-      <button class="menu-btn" id="aiBtn">🤖 Play vs AI</button>
-    </div>
-    <div id="game-container">
-      <canvas id="gameCanvas" width="800" height="600"></canvas>
-    </div>
-    <div id="more-games">
-      <h2>More Games</h2>
-      <div class="game-links">
-        <a href="game1.html"><img src="g1.png" alt="Game 1"></a>
-        <a href="game2.html"><img src="g2.png" alt="Game 2"></a>
-        <a href="game3.html"><img src="g3.png" alt="Game 3"></a>
-      </div>
-    </div>
+    <p>Choose your mode:</p>
+    <button class="menu-btn" id="friendBtn">👬 Play with Friend</button>
+    <button class="menu-btn" id="aiBtn">🤖 Play vs AI</button>
   </div>
 
   <script src="pong.js"></script>
