@@ -1,0 +1,141 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: #f9fdfd;
+    color: #222;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2962ff;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #2962ff;
+  }
+  
+  .nav-buttons .btn,
+  .nav-buttons .btn-outline {
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .btn {
+    background: #2962ff;
+    color: #fff;
+  }
+  
+  .btn:hover {
+    background: #0039cb;
+  }
+  
+  .btn-outline {
+    border: 2px solid #2962ff;
+    color: #2962ff;
+  }
+  
+  .btn-outline:hover {
+    background: #2962ff;
+    color: #fff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px;
+    background: linear-gradient(90deg, #f0f9ff, #e0f7fa);
+  }
+  
+  .hero-text {
+    max-width: 50%;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .hero-text span {
+    color: #2962ff;
+  }
+  
+  .hero-text p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .hero-buttons {
+    margin-top: 20px;
+  }
+  
+  .hero-image img {
+    max-width: 400px;
+  }
+  
+  /* Why Section */
+  .why {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .why h2 {
+    font-size: 2rem;
+    color: #2962ff;
+    margin-bottom: 15px;
+  }
+  
+  .why p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  /* Footer */
+  footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 50px;
+  }
