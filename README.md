@@ -1,56 +1,18 @@
-🎮 Gaming Website (Poki-Style)
+PlayCore – Online Gaming Platform
+Overview
 
-A gaming platform where users can play multiple lightweight browser-based games, inspired by Poki.
+PlayCore is a web-based gaming platform that allows users to play casual and arcade-style games after signing up or logging in. The platform provides an engaging, user-friendly interface and ensures that only authenticated users can access games. Its design is inspired by popular Poki-style gaming websites, combining fun gameplay with informative content.
 
-The project uses a web-based frontend (HTML, CSS, JS) for UI/UX, C++ for game logic (compiled for web execution), and in the future will be extended with Flask backend and MySQL database for user management, scores, and leaderboards.
+Features:-
 
-⸻
+* User Authentication: Secure login and sign-up system.
+* Game Library: Access a variety of games after login.
+* Informative Front Page: Includes About, Contact, and platform information.
+* Responsive Design: Works seamlessly on different devices.
+* Modern UI Theme: Poki-style visually appealing interface.
 
-🚀 Features
-	•	🎨 Frontend (HTML, CSS, JS) for interactive UI and game hosting.
-	•	🕹️ C++ Game Core for fast and efficient game logic (compiled to run in the browser via WebAssembly).
-	•	🔌 Backend (Flask) for APIs, authentication, and server-side operations (future).
-	•	💾 Database (MySQL) for storing player data, scores, and leaderboards (future).
-	•	📱 Responsive design for desktop and mobile gaming.
-
-⸻
-
-🛠️ Tech Stack
-
-Frontend
-	•	HTML5, CSS3, JavaScript (Vanilla JS)
-
-Game Logic
-	•	C++ (compiled to WebAssembly / Emscripten)
-
-Backend (Planned)
-	•	Flask (Python)
-
-Database (Planned)
-	•	MySQL
-
-📂 Project Structure
-gaming-website/
-│── frontend/
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   └── assets/ (images, sounds, icons)
-│
-│── games/
-│   ├── flappy-bird/ 
-│   ├── snake/
-│   └── pong/
-│
-│── cpp_core/
-│   ├── game.cpp
-│   └── build/ (compiled WebAssembly files)
-│
-│── backend/ (future)
-│   ├── app.py
-│   └── routes/
-│
-│── database/ (future)
-│   └── schema.sql
-│
-└── README.md
+Technologies Used:-
+* Frontend: HTML, CSS, JavaScript
+* Backend: Node.js
+* Database: MySQL / JSON / LocalStorage
+* Design Tools: Canva 
