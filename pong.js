@@ -12,7 +12,7 @@ let howToPlay = null;
 const BALL_COLOR = "white";
 const PADDLE_COLOR = "white";
 
-// 🎱 Ball Class
+
 class Ball {
     constructor(x, y, speedX, speedY, radius) {
         this.posX = x;
@@ -66,7 +66,7 @@ class Ball {
     }
 }
 
-// 🏓 Paddle Class
+
 class Paddle {
     constructor(x, y, width, height) {
         this.posX = x;
@@ -92,7 +92,7 @@ class Paddle {
     }
 }
 
-// 🤖 AI Paddle extends Paddle
+
 class Ai extends Paddle {
     trackBall(ballY) {
         if (ballY < this.posY && this.posY > 0) this.posY -= 5;
@@ -100,7 +100,7 @@ class Ai extends Paddle {
     }
 }
 
-// 🎮 Game objects
+
 let ball = new Ball(screenWidth/2, screenHeight/2, 6, 6, 10);
 let sq1 = new Paddle(1, 300, 10, 75);
 let sq2 = new Ai(790, 300, 10, 75);
@@ -111,7 +111,7 @@ let keys = {};
 window.addEventListener("keydown", e => keys[e.key] = true);
 window.addEventListener("keyup", e => keys[e.key] = false);
 
-// 🌀 Main loop
+
 function gameLoop() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
 
@@ -154,14 +154,14 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-// 🏆 Draw Score
+
 function drawScore(score, x, size) {
     ctx.fillStyle = "white";
     ctx.font = size + "px 'Press Start 2P', monospace";
     ctx.fillText(score, x, 50);
 }
 
-// 🎯 Collision Detection
+
 function checkCollision(ball, paddle) {
     return (
         ball.posX - ball.radius < paddle.posX + paddle.width &&
