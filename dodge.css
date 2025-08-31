@@ -3,7 +3,8 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    /* background: linear-gradient(135deg, #1e3c72, #2a5298); */
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     font-family: Arial, sans-serif;
     color: white;
   }

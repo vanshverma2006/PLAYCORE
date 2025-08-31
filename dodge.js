@@ -8,6 +8,10 @@ canvas.height = screenHeight;
 const W = screenWidth;
 const H = screenHeight;
 
+const spaceshipImg = new Image();
+spaceshipImg.src = "spaceship.png";
+
+
 const overlay = document.getElementById("overlay");
 const overlayMessage = document.getElementById("overlayMessage");
 
@@ -20,15 +24,14 @@ window.addEventListener("keyup", (e) => keys[e.key.toLowerCase()] = false);
 
 class Player {
   constructor() {
-    this.width = 50;
-    this.height = 20;
+    this.width = 60;
+    this.height = 60;
     this.x = W / 2 - this.width / 2;
     this.y = H - this.height - 10;
     this.speed = 6;
   }
   draw() {
-    ctx.fillStyle = "#00e676";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.drawImage(spaceshipImg, this.x, this.y, this.width, this.height);
   }
   update() {
     if (keys["a"] || keys["arrowleft"]) this.x -= this.speed;
@@ -94,7 +97,7 @@ class Game {
 
     // shoot bullets
     if (keys[" "] && Date.now() - this.lastShot > 300) {
-      this.bullets.push(new Bullet(this.player.x + this.player.width / 2 - 2, this.player.y));
+      this.bullets.push(new Bullet(this.player.x + this.player.width / 2, this.player.y));
       this.lastShot = Date.now();
     }
 
