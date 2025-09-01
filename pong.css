@@ -12,7 +12,7 @@ body {
     color: white;
 }
 
-/* Game container */
+
 #game-container {
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ body {
     margin-bottom: 60px;
 }
 
-/* Canvas styled like arcade */
+
 canvas {
     border: 6px solid #fff;
     border-radius: 15px;
@@ -29,7 +29,7 @@ canvas {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
 
-/* Menu overlay */
+
 #menu {
     position: absolute;
     top: 0; left: 0;
@@ -58,7 +58,7 @@ canvas {
     color: #f1f1f1;
 }
 
-/* Buttons styled like Poki */
+
 .menu-btn {
     background: #00c9ff;
     border: none;
@@ -79,7 +79,7 @@ canvas {
     box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
 
-/* more game options */
+
 #bottom-buttons {
     position: absolute;
     bottom: 20px;

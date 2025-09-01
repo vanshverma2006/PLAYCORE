@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +7,18 @@
 }
 
 html, body {
-  height: 100%; /* full height */
+  height: 100%; 
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ensure body takes full screen */
+  min-height: 100vh; 
   background: #f9fdfd;
   color: #222;
 }
 
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,7 +63,7 @@ body {
   margin-left: 10px;
 }
 
-/* Buttons */
+
 .btn {
   background: #00695c;
   color: #fff;
@@ -83,14 +83,14 @@ body {
   color: #fff;
 }
 
-/* Hero Section */
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 80px 50px;
   background: linear-gradient(90deg, #b2dfdb, #004d40);
-  flex: 1; /* take available height before footer */
+  flex: 1; 
 }
 
 .hero-text {
@@ -171,7 +171,7 @@ section p {
   text-align: center;
 }
 
-/* About Section */
+
 .about {
   background: #e0f2f1;
   border-radius: 12px;
@@ -181,7 +181,7 @@ section p {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Features Section */
+
 .features {
   background: #fff;
 }
@@ -266,19 +266,19 @@ section p {
 .contact button:hover {
   background: #004d40;
 }
-/* Increase spacing and make sections taller */
+
 section {
-  padding: 120px 60px; /* more top/bottom space */
-  min-height: 100vh; /* full viewport height for each section */
+  padding: 120px 60px; 
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertically center content */
+  justify-content: center; 
 }
 
-/* Hero Section tweaks */
+
 .hero {
-  padding: 140px 80px; /* more breathing room */
-  min-height: 100vh; /* full viewport height */
+  padding: 140px 80px; 
+  min-height: 100vh; 
 }
 
 .hero-text h1 {
@@ -292,7 +292,7 @@ section {
   line-height: 1.8;
 }
 
-/* Why Section tweaks */
+
 .why {
   padding: 120px 60px;
 }
@@ -309,19 +309,19 @@ section {
   margin: 0 auto 30px auto;
 }
 
-/* About Section tweaks */
+
 .about {
   margin: 40px 60px;
   padding: 80px;
 }
 
-/* Features Section tweaks */
+
 .features-container {
   margin-top: 60px;
   gap: 30px;
 }
 
-/* Contact Section tweaks */
+
 .contact {
   margin: 40px 60px;
   padding: 80px;
@@ -329,4 +329,122 @@ section {
 
 .contact form {
   gap: 20px;
+}
+
+
+
+@media (max-width: 992px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px 30px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 40px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 80px 40px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 8px 0;
+  }
+
+  .nav-buttons {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .about,
+  .contact {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .btn, .btn-outline {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p {
+    font-size: 0.9rem;
+  }
 }
