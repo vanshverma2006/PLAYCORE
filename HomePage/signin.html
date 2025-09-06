@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlayCore - Sign Up</title>
+  <title>PlayCore - Sign In</title>
   <link rel="stylesheet" href="sign.css">
 </head>
 <body>
@@ -13,20 +13,24 @@
       <div class="auth-header">
         <!-- <img src="public/playcore-logo.png" alt="PlayCore Logo" class="auth-logo"> -->
         <h1>PlayCore</h1>
-        <p class="tagline">Join the fun and play anywhere</p>
+        <p class="tagline">Your ultimate gaming hub</p>
       </div>
 
 
-      <form action="front.html" method="post">
-        <input type="text" placeholder="Full Name" required>
+      <form action="../front.html">
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
-        <button type="submit" class="btn">Sign Up</button>
+        <div class="extra-options">
+          <label>
+            <input type="checkbox"> Remember Me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
       </form>
 
 
-      <p class="switch-page">Already have an account? <a href="signin.html">Sign In</a></p>
+      <p class="switch-page">Don't have an account? <a href="signup.html">Sign Up</a></p>
     </div>
   </div>
 </body>

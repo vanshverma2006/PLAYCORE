@@ -9,7 +9,7 @@ const W = screenWidth;
 const H = screenHeight;
 
 const spaceshipImg = new Image();
-spaceshipImg.src = "spaceship.png";
+spaceshipImg.src = "imageFolder/spaceship.png";
 
 
 const overlay = document.getElementById("overlay");
