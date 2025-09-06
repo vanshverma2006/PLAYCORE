@@ -140,19 +140,19 @@ body {
   color: #004d40;
 }
 
-/* Footer */
+
 footer {
   background: #f1f1f1;
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
   color: #555;
-  margin-top: auto; /* pushes footer to bottom */
+  margin-top: auto; 
 }
-/* General Sections */
+
 section {
   padding: 80px 60px;
-  scroll-margin-top: 80px; /* height of navbar */
+  scroll-margin-top: 80px; 
 }
 
 section h2 {
@@ -218,7 +218,7 @@ section p {
   color: #004d40;
 }
 
-/* Contact Section */
+
 .contact {
   background: #e0f2f1;
   border-radius: 12px;
@@ -421,7 +421,7 @@ section {
   }
 }
 
-/* Small Phones */
+
 @media (max-width: 480px) {
   .logo {
     font-size: 1.2rem;
