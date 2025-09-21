@@ -1,12 +1,15 @@
-const screenWidth = 800;
-const screenHeight = 600;
+
+let screenWidth = document.documentElement.clientWidth * 0.95;
+let screenHeight = document.documentElement.clientHeight * 0.75;
+
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = screenWidth;
 canvas.height = screenHeight;
-const W = screenWidth;
-const H = screenHeight;
+
+let W = screenWidth;
+let H = screenHeight;
 
 const spaceshipImg = new Image();
 spaceshipImg.src = "imageFolder/spaceship.png";
@@ -165,4 +168,23 @@ function loop() {
   }
   requestAnimationFrame(loop);
 }
+// Adjust canvas size on window resize
+window.addEventListener("resize", () => {
+  screenWidth = document.documentElement.clientWidth * 0.95;
+  screenHeight = document.documentElement.clientHeight * 0.75;
+
+  canvas.width = screenWidth;
+  canvas.height = screenHeight;
+
+  W = screenWidth;
+  H = screenHeight;
+
+  if (game && game.player) {
+    // Keep player inside bounds after resize
+    game.player.x = Math.max(0, Math.min(W - game.player.width, game.player.x));
+    game.player.y = Math.max(0, Math.min(H - game.player.height, game.player.y));
+  }
+});
+// Trigger resize once on load for mobile
+window.dispatchEvent(new Event("resize"));
 loop();
