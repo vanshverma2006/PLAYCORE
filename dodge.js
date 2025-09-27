@@ -86,7 +86,7 @@ class Game {
     this.blocks = [];
     this.bullets = [];
     this.score = 0;
-    this.state = "start"; // start, playing, gameover
+    this.state = "start"; 
     this.lastSpawn = 0;
     this.lastShot = 0;
   }
@@ -98,27 +98,27 @@ class Game {
   update() {
     this.player.update();
 
-    // shoot bullets
+
     if (keys[" "] && Date.now() - this.lastShot > 300) {
       this.bullets.push(new Bullet(this.player.x + this.player.width / 2, this.player.y));
       this.lastShot = Date.now();
     }
 
-    // spawn blocks
+
     if (Date.now() - this.lastSpawn > 1000) {
       this.blocks.push(new Block());
       this.lastSpawn = Date.now();
     }
 
-    // update bullets
+
     for (let b of this.bullets) b.update();
     this.bullets = this.bullets.filter(b => b.y > -b.height);
 
-    // update blocks
+
     for (let bl of this.blocks) bl.update();
     this.blocks = this.blocks.filter(bl => bl.y < H);
 
-    // check bullet-block collisions
+
     for (let i = this.blocks.length - 1; i >= 0; i--) {
       for (let j = this.bullets.length - 1; j >= 0; j--) {
         let bl = this.blocks[i];
@@ -135,7 +135,7 @@ class Game {
       }
     }
 
-    // check player-block collision
+
     for (let bl of this.blocks) {
       if (this.player.x < bl.x + bl.width &&
           this.player.x + this.player.width > bl.x &&
@@ -168,7 +168,7 @@ function loop() {
   }
   requestAnimationFrame(loop);
 }
-// Adjust canvas size on window resize
+
 window.addEventListener("resize", () => {
   screenWidth = document.documentElement.clientWidth * 0.95;
   screenHeight = document.documentElement.clientHeight * 0.75;
@@ -180,11 +180,11 @@ window.addEventListener("resize", () => {
   H = screenHeight;
 
   if (game && game.player) {
-    // Keep player inside bounds after resize
+
     game.player.x = Math.max(0, Math.min(W - game.player.width, game.player.x));
     game.player.y = Math.max(0, Math.min(H - game.player.height, game.player.y));
   }
 });
-// Trigger resize once on load for mobile
+
 window.dispatchEvent(new Event("resize"));
 loop();

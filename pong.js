@@ -1,8 +1,10 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const screenWidth = 800;
-const screenHeight = 600;
+let screenWidth = canvas.clientWidth;
+let screenHeight = canvas.clientHeight;
+canvas.width = screenWidth;
+canvas.height = screenHeight;
 
 let playerScore = 0;
 let playerScore2 = 0;
@@ -179,6 +181,13 @@ document.getElementById("friendBtn").addEventListener("click", () => {
 document.getElementById("aiBtn").addEventListener("click", () => {
     howToPlay = 'o';
     document.getElementById("menu").style.display = "none";
+});
+
+window.addEventListener("resize", () => {
+  screenWidth = canvas.clientWidth;
+  screenHeight = canvas.clientHeight;
+  canvas.width = screenWidth;
+  canvas.height = screenHeight;
 });
 
 gameLoop();

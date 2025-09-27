@@ -91,7 +91,7 @@ canvas {
   max-width: 100%;
   height: auto;
 }
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .overlay h1 {
     font-size: 32px;

@@ -29,7 +29,6 @@ signupForm.addEventListener("submit", function (event) {
     return;
   }
 
-  // Simulate success
   alert("Sign up successful!");
-  window.location.href = "signin.html"; // redirect after success
+  window.location.href = "signin.html"; 
 });
