@@ -1,0 +1,450 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+html, body {
+  height: 100%; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  background: #f9fdfd;
+  color: #222;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00695c;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00695c;
+}
+
+.nav-buttons .btn,
+.nav-buttons .btn-outline {
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
+.btn {
+  background: #00695c;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #004d40;
+}
+
+.btn-outline {
+  border: 2px solid #00695c;
+  color: #00695c;
+}
+
+.btn-outline:hover {
+  background: #004d40;
+  color: #fff;
+}
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 50px;
+  background: linear-gradient(90deg, #b2dfdb, #004d40);
+  flex: 1; 
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00695c;
+}
+
+.hero-text span {
+  color: #004d40;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  color: #004d40;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-image img {
+  max-width: 400px;
+}
+
+/* Why Section */
+.why {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.why h2 {
+  font-size: 2rem;
+  color: #00695c;
+  margin-bottom: 15px;
+}
+
+.why p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #004d40;
+}
+
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto; 
+}
+
+section {
+  padding: 80px 60px;
+  scroll-margin-top: 80px; 
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #00695c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #004d40;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+
+.about {
+  background: #e0f2f1;
+  border-radius: 12px;
+  margin: 30px 60px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+.features {
+  background: #fff;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: #e0f2f1;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  background: #b2dfdb;
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #004d40;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #004d40;
+}
+
+
+.contact {
+  background: #e0f2f1;
+  border-radius: 12px;
+  margin: 30px 60px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact p {
+  margin-bottom: 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.contact input, .contact textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact input:focus, .contact textarea:focus {
+  border-color: #00695c;
+}
+
+.contact button {
+  padding: 12px;
+  background: #00695c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background: #004d40;
+}
+
+section {
+  padding: 120px 60px; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+
+.hero {
+  padding: 140px 80px; 
+  min-height: 100vh; 
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.hero-text p {
+  margin: 30px 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+
+.why {
+  padding: 120px 60px;
+}
+
+.why h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.why p, .why ul {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+
+.about {
+  margin: 40px 60px;
+  padding: 80px;
+}
+
+
+.features-container {
+  margin-top: 60px;
+  gap: 30px;
+}
+
+
+.contact {
+  margin: 40px 60px;
+  padding: 80px;
+}
+
+.contact form {
+  gap: 20px;
+}
+
+
+
+@media (max-width: 992px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px 30px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 40px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 80px 40px;
+  }
+}
+
+/* tabs */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 8px 0;
+  }
+
+  .nav-buttons {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .about,
+  .contact {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why h2 {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .btn, .btn-outline {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p {
+    font-size: 0.9rem;
+  }
+}
