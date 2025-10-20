@@ -1,4 +1,21 @@
-
+/* -------------------- GLOBAL RESET -------------------- */
+.intro-page {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,19 +23,16 @@
   font-family: 'Arial', sans-serif;
 }
 
-html, body {
-  height: 100%; 
-}
-
+/* Enable scrolling & smooth navigation */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
   background: #f9fdfd;
   color: #222;
+  min-height: 100vh;
+  overflow-y: auto;
+  display: block;
 }
 
-
+/* -------------------- NAVBAR -------------------- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,7 +77,6 @@ body {
   margin-left: 10px;
 }
 
-
 .btn {
   background: #00695c;
   color: #fff;
@@ -83,14 +96,22 @@ body {
   color: #fff;
 }
 
-
+/* -------------------- HERO SECTION -------------------- */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 50px;
+  padding: 120px 60px;
   background: linear-gradient(90deg, #b2dfdb, #004d40);
-  flex: 1; 
+  flex-wrap: wrap;
+}
+
+section {
+  padding: 100px 60px;
+  display: block;
+  min-height: auto;
+  width: 100%;
+  background: #fff;
 }
 
 .hero-text {
@@ -98,7 +119,7 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #00695c;
 }
@@ -108,9 +129,10 @@ body {
 }
 
 .hero-text p {
-  margin: 20px 0;
-  font-size: 1.1rem;
+  margin: 30px 0;
+  font-size: 1.2rem;
   color: #004d40;
+  line-height: 1.8;
 }
 
 .hero-buttons {
@@ -121,109 +143,55 @@ body {
   max-width: 400px;
 }
 
-/* Why Section */
+/* -------------------- WHY SECTION -------------------- */
 .why {
   text-align: center;
-  padding: 60px 20px;
+  padding: 100px 60px;
+  background: #ffffff;
 }
 
 .why h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #00695c;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
-.why p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  color: #004d40;
-}
-
-
-footer {
-  background: #f1f1f1;
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: auto; 
-}
-
-section {
-  padding: 80px 60px;
-  scroll-margin-top: 80px; 
-}
-
-section h2 {
-  font-size: 2rem;
-  color: #00695c;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #004d40;
-  max-width: 900px;
+.why p, 
+.why ul {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
   margin: 0 auto 30px auto;
-  text-align: center;
+  color: #004d40;
 }
 
-
+/* -------------------- ABOUT SECTION -------------------- */
 .about {
   background: #e0f2f1;
   border-radius: 12px;
-  margin: 30px 60px;
-  padding: 60px;
+  margin: 60px;
+  padding: 80px;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-
-.features {
-  background: #fff;
+.about-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
-.features-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+.about-content div {
+  flex: 1 1 300px;
 }
 
-.feature-card {
-  background: #e0f2f1;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-.feature-card:hover {
-  background: #b2dfdb;
-  transform: translateY(-5px);
-}
-
-.feature-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  color: #004d40;
-}
-
-.feature-card p {
-  font-size: 1rem;
-  color: #004d40;
-}
-
-
+/* -------------------- CONTACT SECTION -------------------- */
 .contact {
   background: #e0f2f1;
   border-radius: 12px;
-  margin: 30px 60px;
-  padding: 60px;
+  margin: 60px;
+  padding: 80px;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
@@ -237,10 +205,11 @@ section p {
   flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
-  gap: 15px;
+  gap: 20px;
 }
 
-.contact input, .contact textarea {
+.contact input, 
+.contact textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -248,7 +217,8 @@ section p {
   font-size: 1rem;
 }
 
-.contact input:focus, .contact textarea:focus {
+.contact input:focus, 
+.contact textarea:focus {
   border-color: #00695c;
 }
 
@@ -267,72 +237,17 @@ section p {
   background: #004d40;
 }
 
-section {
-  padding: 120px 60px; 
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-}
-
-
-.hero {
-  padding: 140px 80px; 
-  min-height: 100vh; 
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 25px;
-}
-
-.hero-text p {
-  margin: 30px 0;
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-
-.why {
-  padding: 120px 60px;
-}
-
-.why h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.why p, .why ul {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-}
-
-
-.about {
-  margin: 40px 60px;
-  padding: 80px;
-}
-
-
-.features-container {
+/* -------------------- FOOTER -------------------- */
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #555;
   margin-top: 60px;
-  gap: 30px;
 }
 
-
-.contact {
-  margin: 40px 60px;
-  padding: 80px;
-}
-
-.contact form {
-  gap: 20px;
-}
-
-
-
+/* -------------------- RESPONSIVE DESIGN -------------------- */
 @media (max-width: 992px) {
   .navbar {
     flex-wrap: wrap;
@@ -366,7 +281,6 @@ section {
   }
 }
 
-/* tabs */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -411,7 +325,6 @@ section {
   }
 
   .about-content {
-    display: flex;
     flex-direction: column;
     gap: 20px;
   }
@@ -420,7 +333,6 @@ section {
     font-size: 2rem;
   }
 }
-
 
 @media (max-width: 480px) {
   .logo {
@@ -435,7 +347,8 @@ section {
     font-size: 0.9rem;
   }
 
-  .btn, .btn-outline {
+  .btn, 
+  .btn-outline {
     padding: 6px 12px;
     font-size: 0.9rem;
   }
